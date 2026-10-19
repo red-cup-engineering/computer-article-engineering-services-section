@@ -5,8 +5,7 @@
   "description": "Restricts document carriers to sustained prose claims with explicit disposition.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/red-cup-engineering/computer-content-engineering-services-section.git",
-    "directory": "services/computer-documents-engineering-services-section/services/computer-article-engineering-services-section"
+    "url": "git+https://github.com/red-cup-engineering/computer-article-engineering-services-section.git"
   },
   "x-capability-recovery": [
     {
