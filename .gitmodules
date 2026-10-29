@@ -1,7 +1,3 @@
-[submodule "specification-engineering-services-section"]
-	path = services/specification-engineering-services-section
-	url = https://github.com/red-cup-engineering/specification-engineering-services-section.git
-	branch = main
 [submodule "notes-services-section"]
 	path = services/notes-services-section
 	url = https://github.com/red-cup-engineering/notes-engineering-services-section.git
