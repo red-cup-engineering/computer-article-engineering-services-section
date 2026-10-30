@@ -1,0 +1,4 @@
+[submodule "notes-services-section"]
+	path = services/notes-services-section
+	url = https://github.com/red-cup-engineering/notes-engineering-services-section.git
+	branch = main
