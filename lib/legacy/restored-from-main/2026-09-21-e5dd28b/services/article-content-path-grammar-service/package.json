@@ -1,0 +1,22 @@
+{
+  "name": "@red-cup-engineering/article-content-path-grammar-service",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Pure path grammar for article territories and dated note carriers; filesystem and Markdown-vault effects remain in their own services.",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.mts",
+      "import": "./src/article-content-path-grammar.mjs"
+    }
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
