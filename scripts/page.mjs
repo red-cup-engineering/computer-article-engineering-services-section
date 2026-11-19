@@ -29,4 +29,4 @@ export const PageSchema = {
   },
 };
 
-export const pageContract = schemaFrom(PageSchema);
+export const pageValidator = schemaFrom(PageSchema);
