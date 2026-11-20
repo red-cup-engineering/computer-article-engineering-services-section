@@ -2,14 +2,23 @@ import { readingAs } from "@red-cup-engineering/metrologic/four";
 
 const DATE_LIKE = /^\d{4}-\d{2}-\d{2}(?:$|[T\s])/u;
 
+function hasCalendarDate(value) {
+  if (!DATE_LIKE.test(value)) return false;
+  const day = value.slice(0, 10);
+  const date = new Date(day + "T00:00:00Z");
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === day;
+}
+
 export function publicationDateReadout(candidates) {
   const observed = candidates
     .map((candidate) => Object.freeze({ source: candidate.source, value: candidate.value?.trim() }))
     .filter((candidate) => candidate.value !== undefined && candidate.value !== "");
   if (observed.length === 0) return readout("unknown", undefined, ["publication-date:absent"]);
 
-  const valid = observed.filter((candidate) => DATE_LIKE.test(candidate.value));
-  const invalid = observed.filter((candidate) => !DATE_LIKE.test(candidate.value));
+  const valid = [], invalid = [];
+  for (const candidate of observed) {
+    (hasCalendarDate(candidate.value) ? valid : invalid).push(candidate);
+  }
   const distinctValid = [...new Set(valid.map((candidate) => candidate.value))];
 
   if (valid.length === 0) {

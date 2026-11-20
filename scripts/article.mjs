@@ -346,6 +346,15 @@ export function articlePublicationCandidate(article, policy = {}) {
   });
 }
 
+function seoRequirement(options) {
+  const first = options.requireSeoTermInFirstParagraph !== false;
+  const heading = options.requireSeoTermInH2 !== false;
+  if (first && heading) return "SEO term in first paragraph, and SEO term in H2";
+  if (first) return "SEO term in first paragraph";
+  if (heading) return "SEO term in H2";
+  return "SEO term";
+}
+
 /** Aggregate Article content records into the old mill's operator-facing publication-candidate report shape. */
 export function articlePublicationReport(
   articles,
@@ -365,7 +374,7 @@ export function articlePublicationReport(
     candidates,
     policy: Object.freeze([
       `minimumWords=${options.minimumWords ?? DEFAULT_MINIMUM_WORDS}`,
-      "requires description, source evidence, license, syndication rights, SEO term in first paragraph, and SEO term in H2",
+      "requires description, source evidence, license, syndication rights, " + seoRequirement(options),
       "blocking editorial gates force editorial-hold before copy repair",
     ]),
   });

@@ -2,7 +2,7 @@
   "name": "@red-cup-engineering/computer-article-engineering-services-section",
   "version": "0.1.5-dev.0",
   "type": "module",
-  "description": "Restricts document carriers to sustained prose claims with explicit disposition.",
+  "description": "Validates Markdown article and page records, reviews articles for publication, and compares publication date evidence.",
   "exports": {
     "./article-content-path-grammar": "./scripts/article-content-path-grammar.mjs",
     "./article": "./scripts/article.mjs",
@@ -10,17 +10,21 @@
     "./publication-date": "./scripts/publication-date.mjs"
   },
   "dependencies": {
-    "@red-cup-engineering/json-schema-engineering-services-section": "^0.5.9",
-    "@red-cup-engineering/metrologic": "^0.22.4"
+    "@red-cup-engineering/json-schema-engineering-services-section": "^0.5.9 || 0.5.14-dev.0",
+    "@red-cup-engineering/metrologic": "^0.22.4 || 0.22.12-dev.0"
   },
   "files": [
     "package.json",
     "README.md",
-    "scripts"
+    "scripts",
+    "test"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/red-cup-engineering/computer-article-engineering-services-section.git"
   },
-  "private": false
+  "private": false,
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
 }
