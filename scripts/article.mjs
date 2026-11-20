@@ -163,7 +163,7 @@ export const ArticleSchema = {
   },
 };
 
-export const articleValidator = schemaFrom(ArticleSchema);
+export const articleContract = schemaFrom(ArticleSchema);
 
 const DEFAULT_MINIMUM_WORDS = 450;
 const ONE_CLICK_REPAIR_CODES = new Set(["missing-license", "missing-license-url", "missing-syndication-rights"]);
