@@ -23,8 +23,5 @@
     "type": "git",
     "url": "git+https://github.com/red-cup-engineering/computer-article-engineering-services-section.git"
   },
-  "private": false,
-  "scripts": {
-    "test": "node --test test/*.test.mjs"
-  }
+  "private": false
 }
